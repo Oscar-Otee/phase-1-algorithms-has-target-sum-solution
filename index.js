@@ -1,13 +1,27 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+
+
+const objectForNumbersThatMakeTarget = {};
+
+for (const element of array) {
+  const result = target - element;
+  if (result in objectForNumbersThatMakeTarget) return true;
+    objectForNumbersThatMakeTarget[element] = true;
+}
+
+return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+  It is linear since each element in array will be checked. So it is O(n)
 */
 
 /* 
   Add your pseudocode here
+
+  loop over the array while subtracting every element from target and assigning it to the result. make the element key of the obbject created and true the value after returning true.
 */
 
 /*
